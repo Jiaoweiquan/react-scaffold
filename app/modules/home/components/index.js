@@ -6,6 +6,7 @@ import { createStructuredSelector } from 'reselect'
 
 import * as actions from '../actions'
 import { selectors } from 'modules/shared/misc'
+import { homeSelector } from '../selectors'
 
 class Home extends React.Component {
   static contextTypes = {
@@ -16,20 +17,26 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
+    this.props.getAllPosts()
   }
 
   componentDidUpdate(prevProps, prevState) {
   }
 
   render() {
+    const { posts } = this.props.home
     return (
       <div className={styles.container}>
-        首页
+        <h1>首页</h1>
+        {posts.map(post => {
+          return <li>{post.title}</li>
+        })}
       </div>
     )
   }
 }
 
 export default connect(createStructuredSelector({
-  language: selectors.languageSelector
+  language: selectors.languageSelector,
+  home: homeSelector
 }), actions)(Home)

@@ -3,6 +3,7 @@ npm-debug.log
 build
 coverage
 test/coverage
+dist
 
 # Exclude compiled files
 # lib

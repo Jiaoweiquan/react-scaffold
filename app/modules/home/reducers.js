@@ -1,5 +1,6 @@
 import { handleActions } from 'redux-actions'
 import * as T from './actionTypes'
+import { T as TT } from 'modules/sendFlowerPop'
 
 const initHomeState = {
   posts: [],
@@ -25,5 +26,15 @@ export const home = handleActions({
       flowerLog: state.flowerLog.concat(flowerLog.data),
       users: state.users.concat(users.data)
     })
+  },
+  [TT.SEND_FLOWER]: (state, action) => {
+    let {count, uid} = action.payload.data
+    let flowerLog = state.flowerLog.map(log => {
+      if (log.uid === uid) {
+        log.amount += count
+      }
+      return log
+    })
+    return {...state, flowerLog}
   }
 }, initHomeState)

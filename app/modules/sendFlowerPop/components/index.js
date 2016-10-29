@@ -16,7 +16,9 @@ class SendFlowerPop extends React.Component {
 
   constructor(props) {
     super(props)
-    'something here'
+    this.state = {
+      value: 1
+    }
   }
 
   componentWillMount() {
@@ -36,6 +38,14 @@ class SendFlowerPop extends React.Component {
     return list
   }
 
+  getOptions() {
+    let list = []
+    for (let i = 1; i <= 10; i++) {
+      list.push(<option key={i} value={i}>{i}</option>)
+    }
+    return list
+  }
+
   getSelectComp() {
     return <div className={styles.slide_wrapper} >
       <ul className={styles.slide}>
@@ -45,8 +55,21 @@ class SendFlowerPop extends React.Component {
     </div>
   }
 
+  onSelect(eve) {
+    this.setState({value: eve.target.value})
+  }
+
   getSelector() {
-    return <selector></selector>
+    return <select className={styles.selector} onChange={this.onSelect.bind(this)} value={this.state.value}>
+      {this.getOptions()}
+    </select>
+  }
+
+  sendFlower() {
+    this.props.sendFlower({
+      uid: this.props.flowerPop.userId,
+      count: parseInt(this.state.value)
+    })
   }
 
   render() {
@@ -64,7 +87,7 @@ class SendFlowerPop extends React.Component {
       }
       <div className={styles.bottom}>
         <button onClick={() => this.props.closePop()}>取消</button>
-        <button>赠送</button>
+        <button onClick={this.sendFlower.bind(this)}>赠送</button>
       </div>
     </div>
   }

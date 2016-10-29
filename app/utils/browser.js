@@ -14,5 +14,5 @@ export function detectMobile() {
 }
 
 export function getAvatar(userId) {
-  return 'http://localhost:3001/' + Math.floor(Math.random() * 20) + '.png'
+  return 'http://localhost:3001/' + userId + '.png'
 }

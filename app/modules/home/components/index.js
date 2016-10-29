@@ -58,14 +58,14 @@ class Home extends React.Component {
         <Header text="送花排行榜" />
         <ul className={styles.log_list}>
           {
-            flowerLog.map(log => {
+            flowerLog.map((log, ind) => {
               return (
                 <ListItem
                   key={log.uid}
                   onSelect={this.onSelectItem.bind(this, log)}
                   userName={this.getUserName(log.uid)}
                   count={log.amount}
-                  imgSrc={getAvatar(log.uid)} />
+                  imgSrc={getAvatar(ind)} />
               )
             })
           }

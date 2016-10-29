@@ -20,8 +20,11 @@ export function getSendFlowerLog(options) {
   return service.get(Endpoints.SendFlowerLog)
 }
 
-export function sendFlowersTo(options) {
-  return service.post(Endpoints.SendFlowerLog + '/1')
+export function sendFlowersTo({uid, count}) {
+  // return service.post(Endpoints.SendFlowerLog + '/1')
+  return new Promise(resolve => {
+    setTimeout(() => resolve({data: {uid, count}}), 100)
+  })
 }
 
 export function getUsers(options) {

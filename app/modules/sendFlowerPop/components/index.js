@@ -7,6 +7,7 @@ import { createStructuredSelector } from 'reselect'
 import * as actions from '../actions'
 import { selectors } from 'modules/shared/misc'
 import { flowerPopSelector } from '../selectors'
+import { detectMobile } from 'utils/browser'
 
 class SendFlowerPop extends React.Component {
   static contextTypes = {
@@ -44,6 +45,10 @@ class SendFlowerPop extends React.Component {
     </div>
   }
 
+  getSelector() {
+    return <selector></selector>
+  }
+
   render() {
     const {userName} = this.props.flowerPop
     let show = {
@@ -55,7 +60,7 @@ class SendFlowerPop extends React.Component {
     return <div className={styles.pop} style={show} >
       <p className={styles.title}>为{userName}送花</p>
       {
-        this.getSelectComp()
+        detectMobile() ? this.getSelectComp() : this.getSelector()
       }
       <div className={styles.bottom}>
         <button onClick={() => this.props.closePop()}>取消</button>

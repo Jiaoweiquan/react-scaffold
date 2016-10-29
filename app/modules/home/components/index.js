@@ -8,6 +8,8 @@ import * as actions from '../actions'
 import { selectors } from 'modules/shared/misc'
 import { homeSelector } from '../selectors'
 
+import Header from 'modules/header'
+
 class Home extends React.Component {
   static contextTypes = {
     router: React.PropTypes.object.isRequired
@@ -17,19 +19,19 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getAllPosts()
+    this.props.getSendFlowerLog()
   }
 
   componentDidUpdate(prevProps, prevState) {
   }
 
   render() {
-    const { posts } = this.props.home
+    const { flowerLog } = this.props.home
     return (
       <div className={styles.container}>
-        <h1>首页</h1>
-        {posts.map(post => {
-          return <li>{post.title}</li>
+        <Header text="送花排行榜" />
+        {flowerLog.map(log => {
+          return <li>{log.uid}</li>
         })}
       </div>
     )

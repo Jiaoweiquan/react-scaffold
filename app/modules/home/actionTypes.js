@@ -1,1 +1,2 @@
 export const GET_ALL_POSTS = 'HOME/GET_ALL_POSTS'
+export const SEND_FLOWER_LOG = 'HOME/SEND_FLOWER_LOG'

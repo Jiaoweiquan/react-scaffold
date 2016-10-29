@@ -9,6 +9,8 @@ import { selectors } from 'modules/shared/misc'
 import { homeSelector } from '../selectors'
 
 import Header from 'modules/header'
+import ListItem from 'modules/listItem'
+import avatar from 'static/images/0.png'
 
 class Home extends React.Component {
   static contextTypes = {
@@ -31,7 +33,7 @@ class Home extends React.Component {
       <div className={styles.container}>
         <Header text="送花排行榜" />
         {flowerLog.map(log => {
-          return <li>{log.uid}</li>
+          return <ListItem key={log.uid} userName={'anoymous' || log.uid} count={log.amount} imgSrc={avatar} />
         })}
       </div>
     )

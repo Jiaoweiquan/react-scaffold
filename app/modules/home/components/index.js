@@ -11,7 +11,7 @@ import { homeSelector } from '../selectors'
 import Header from 'modules/header'
 import ListItem from 'modules/listItem'
 import avatar from 'static/images/0.png'
-import { component as SendFlowerPop } from 'modules/sendFlowerPop'
+import { component as SendFlowerPop, actions as flowerPopActions } from 'modules/sendFlowerPop'
 
 console.log(SendFlowerPop)
 // <SendFlowerPop />
@@ -38,7 +38,7 @@ class Home extends React.Component {
   }
 
   onSelectItem(log) {
-    console.log('you have select', log)
+    this.props.openPop({userName: 'jiao', userId: 'xxx'})
   }
 
   render() {
@@ -69,4 +69,4 @@ class Home extends React.Component {
 export default connect(createStructuredSelector({
   language: selectors.languageSelector,
   home: homeSelector
-}), actions)(Home)
+}), {...flowerPopActions, ...actions})(Home)

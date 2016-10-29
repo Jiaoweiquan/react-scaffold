@@ -3,7 +3,8 @@ import * as T from './actionTypes'
 
 const initHomeState = {
   posts: [],
-  flowerLog: []
+  flowerLog: [],
+  users: []
 }
 
 export const home = handleActions({
@@ -19,9 +20,10 @@ export const home = handleActions({
     if (action.error) {
       return state
     }
-    let { flowerLog } = action.payload
+    let { flowerLog, users } = action.payload
     return Object.assign({}, state, {
-      flowerLog: state.flowerLog.concat(flowerLog.data)
+      flowerLog: state.flowerLog.concat(flowerLog.data),
+      users: state.users.concat(users.data)
     })
   }
 }, initHomeState)

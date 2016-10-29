@@ -20,7 +20,7 @@
     "test": "better-npm-run test",
     "test:dev": "npm run test -- --browsers=Chrome --single-run=false",
     "build": "better-npm-run build",
-    "mock": "json-server --watch --port 3001 ./mock/db.json",
+    "mock": "json-server --watch --port 3001  ./mock/db.json --static ./mock/images ",
     "server": "http-server ./dist -p 8000 -o"
   },
   "betterScripts": {

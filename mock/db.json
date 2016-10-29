@@ -3,9 +3,6 @@
     { "id": 1, "title": "json-server", "author": "Jiaowei" },
     { "id": 2, "title": "hello world", "author": "Jiaoewi" }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
   "sendflowerlog": [
     {
       "rankid": 0,
@@ -41,6 +38,93 @@
       "rankid": 6,
       "uid": "581402f1b416b9d585aea243",
       "amount": 16
+    }
+  ],
+  "users":[
+    {
+      "uid": "581402f1a573cf10d77dc880",
+      "name": "Cooke",
+      "gender": "male"
+    },
+    {
+      "uid": "581402f1768236075da823b4",
+      "name": "Jenkins",
+      "gender": "male"
+    },
+    {
+      "uid": "581402f1eab2e17e90e0a90e",
+      "name": "Nielsen",
+      "gender": "male"
+    },
+    {
+      "uid": "581402f10c305556ab62be04",
+      "name": "Megan",
+      "gender": "female"
+    },
+    {
+      "uid": "581468f06af2930cd494d2f4",
+      "name": "Phoebe",
+      "gender": "female"
+    },
+    {
+      "uid": "581468f0e78477c15988f1ca",
+      "name": "Ferrell",
+      "gender": "male"
+    },
+    {
+      "uid": "581402f13a57ef269eb9d617",
+      "name": "Velazquez",
+      "gender": "male"
+    },
+    {
+      "uid": "581402f1ab4b16b7efbb8178",
+      "name": "Olga",
+      "gender": "female"
+    },
+    {
+      "uid": "581468f0d06e31666eea479c",
+      "name": "Eunice",
+      "gender": "female"
+    },
+    {
+      "uid": "581402f1b416b9d585aea243",
+      "name": "Daisy",
+      "gender": "female"
+    },
+    {
+      "uid": "581468f0a1df3761c70c859d",
+      "name": "Addie",
+      "gender": "female"
+    },
+    {
+      "uid": "581468f08f56150e512d11ae",
+      "name": "Watts",
+      "gender": "male"
+    },
+    {
+      "uid": "581468f0894d0444c3963826",
+      "name": "Karen",
+      "gender": "female"
+    },
+    {
+      "uid": "581468f032f53f4bc4e3c303",
+      "name": "Cash",
+      "gender": "male"
+    },
+    {
+      "uid": "581468f00e597d4663c86e70",
+      "name": "Lawson",
+      "gender": "male"
+    },
+    {
+      "uid": "581468f0757cf9c8b80af6d1",
+      "name": "Karina",
+      "gender": "female"
+    },
+    {
+      "uid": "581468f0c2de7e92288ed40b",
+      "name": "Heath",
+      "gender": "male"
     }
   ]
 }

@@ -27,8 +27,9 @@
       margin-left: 10px;
       padding: 5px 10px;
       line-height: 1em;
-      background-color: aqua;
+      background-color: #3cc2ec;
       border-radius: 3px;
+      color: white;
     }
   }
 

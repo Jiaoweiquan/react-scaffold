@@ -22,7 +22,8 @@ export const getAllPosts = createAction(T.GET_ALL_POSTS,
 
 export const getSendFlowerLog = createAction(T.SEND_FLOWER_LOG,
   options => ({
-    flowerLog: mockService.getSendFlowerLog()
+    flowerLog: mockService.getSendFlowerLog(),
+    users: mockService.getUsers()
   }),
   options => ({
     dispatchPending: true

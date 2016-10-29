@@ -10,8 +10,8 @@ import { homeSelector } from '../selectors'
 
 import Header from 'modules/header'
 import ListItem from 'modules/listItem'
-import avatar from 'static/images/0.png'
 import { component as SendFlowerPop, actions as flowerPopActions } from 'modules/sendFlowerPop'
+import {getAvatar} from 'utils/browser'
 
 console.log(SendFlowerPop)
 // <SendFlowerPop />
@@ -38,7 +38,17 @@ class Home extends React.Component {
   }
 
   onSelectItem(log) {
-    this.props.openPop({userName: 'jiao', userId: 'xxx'})
+    this.props.openPop({userName: this.getUserName(log.uid), userId: log.uid})
+  }
+
+  getUserName(uid) {
+    let ret = ''
+    this.props.home.users.forEach(user => {
+      if (user.uid === uid) {
+        ret = user.name
+      }
+    })
+    return ret || 'anoymous'
   }
 
   render() {
@@ -53,9 +63,9 @@ class Home extends React.Component {
                 <ListItem
                   key={log.uid}
                   onSelect={this.onSelectItem.bind(this, log)}
-                  userName={'anoymous' || log.uid}
+                  userName={this.getUserName(log.uid)}
                   count={log.amount}
-                  imgSrc={avatar} />
+                  imgSrc={getAvatar(log.uid)} />
               )
             })
           }

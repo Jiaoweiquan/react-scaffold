@@ -3,7 +3,8 @@ import axios from 'axios'
 const host = 'localhost'
 const port = 3001
 const Endpoints = {
-  SendFlowerLog: 'sendflowerlog'
+  SendFlowerLog: 'sendflowerlog',
+  Users: 'users'
 }
 
 const service = axios.create({
@@ -17,4 +18,12 @@ export function getAllPosts() {
 
 export function getSendFlowerLog(options) {
   return service.get(Endpoints.SendFlowerLog)
+}
+
+export function sendFlowersTo(options) {
+  return service.post(Endpoints.SendFlowerLog + '/1')
+}
+
+export function getUsers(options) {
+  return service.get(Endpoints.Users)
 }

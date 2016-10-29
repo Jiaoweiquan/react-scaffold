@@ -48,7 +48,7 @@ class Home extends React.Component {
               return (
                 <ListItem
                   key={log.uid}
-                  onClick={this.onSelectItem.bind(this, log)}
+                  onSelect={this.onSelectItem.bind(this, log)}
                   userName={'anoymous' || log.uid}
                   count={log.amount}
                   imgSrc={avatar} />

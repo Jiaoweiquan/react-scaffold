@@ -1,4 +1,8 @@
 .header {
-  border-bottom: 2px solid grey;
+  border-bottom: 3px solid grey;
   text-align: center;
+  background: linear-gradient(to bottom, rgb(135,224,253) 0%,rgb(83,203,241) 40%,rgb(5,171,224) 100%);
+  margin: 0;
+  padding: 10px 0;
+  color:white;
 }

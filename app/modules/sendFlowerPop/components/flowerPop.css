@@ -1,3 +1,73 @@
 .pop {
-  
+  position: fixed;
+  width: 90%;
+  max-width: 900px;
+  top: 10%;
+  text-align: center;
+  background-color: white;
+  border:1px solid #aaa;
+  min-height: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+  box-shadow: 0 0 8px 10px rgba(0,0,0,.1);
+  li {
+    list-style:none;
+  }
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top: 1px solid #ccc;
+  width:100%;
+  button {
+    width:50%;
+    height:2em;
+    box-sizing:border-box;
+  }
+
+}
+.title {
+  font-size: 2em;
+  margin: 0;
+  padding: 10px 0;  
+  border-bottom: 1px solid #ccc;
+
+}
+
+ul.slide {
+  padding:0;
+  margin:0;
+  overflow: auto;
+  height: 200px;
+  li {
+    line-height:20px;
+    &:last-of-type {
+      padding-bottom:90px;      
+    }
+    &:first-of-type {
+      padding-top:90px;
+    }
+  }
+
+}
+
+.slide_wrapper {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+  i {    
+    display: block;
+    width: 100px;
+    height: 20px;
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    left:50%;
+    top:50%;
+    position:absolute;
+    transform: translate(-50%,-50%);
+  }
 }

@@ -27,12 +27,41 @@ class SendFlowerPop extends React.Component {
   componentDidUpdate(prevProps, prevState) {
   }
 
+  getList() {
+    let list = []
+    for (let i = 1; i <= 10; i++) {
+      list.push(<li key={i}>{i}</li>)
+    }
+    return list
+  }
+
+  getSelectComp() {
+    return <div className={styles.slide_wrapper} >
+      <ul className={styles.slide}>
+        {this.getList()}
+      </ul>
+      <i></i>
+    </div>
+  }
+
   render() {
-    return (
-      <div className={styles.pop}>
-        <button>取消</button><button>赠送</button>
+    const {userName} = this.props.flowerPop
+    let show = {
+      display: 'none'
+    }
+    if (this.props.flowerPop && this.props.flowerPop.isOpen) {
+      show.display = 'block'
+    }
+    return <div className={styles.pop} style={show} >
+      <p className={styles.title}>为{userName}送花</p>
+      {
+        this.getSelectComp()
+      }
+      <div className={styles.bottom}>
+        <button onClick={() => this.props.closePop()}>取消</button>
+        <button>赠送</button>
       </div>
-    )
+    </div>
   }
 }
 

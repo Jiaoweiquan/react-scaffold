@@ -8,7 +8,6 @@ import * as actions from '../actions'
 import { selectors } from 'modules/shared/misc'
 import { flowerPopSelector } from '../selectors'
 
-
 class SendFlowerPop extends React.Component {
   static contextTypes = {
     router: React.PropTypes.object.isRequired
@@ -16,7 +15,6 @@ class SendFlowerPop extends React.Component {
 
   constructor(props) {
     super(props)
-    // this.onSelectItem = this.onSelectItem.bind(this)
     'something here'
   }
 
@@ -24,7 +22,6 @@ class SendFlowerPop extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getSendFlowerLog()
   }
 
   componentDidUpdate(prevProps, prevState) {

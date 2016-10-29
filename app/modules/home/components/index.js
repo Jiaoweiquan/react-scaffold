@@ -11,6 +11,10 @@ import { homeSelector } from '../selectors'
 import Header from 'modules/header'
 import ListItem from 'modules/listItem'
 import avatar from 'static/images/0.png'
+import { component as SendFlowerPop } from 'modules/sendFlowerPop'
+
+console.log(SendFlowerPop)
+// <SendFlowerPop />
 
 class Home extends React.Component {
   static contextTypes = {
@@ -56,6 +60,7 @@ class Home extends React.Component {
             })
           }
         </ul>
+        <SendFlowerPop />
       </div>
     )
   }
